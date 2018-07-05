@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Краны с подогревом</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="shortcut icon" href="favicon.ico"  type="image/x-icon" />
+<style>
+	@font-face {
+    font-family: "MyriadProRegular";
+    src: url("font/MyriadProRegular/MyriadProRegular.eot");
+    src: url("font/MyriadProRegular/MyriadProRegular.eot?#iefix")format("embedded-opentype"),
+    url("font/MyriadProRegular/MyriadProRegular.woff") format("woff"),
+    url("font/MyriadProRegular/MyriadProRegular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+
+#ouibounce-modal {
+    font-family: 'Open Sans', sans-serif;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index:9997;
+}
+#ouibounce-modal .underlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    cursor: pointer;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+}
+#ouibounce-modal .modal {
+    width: 100%;
+    height: auto;
+    max-height:490px;
+    background-color: #e5e5e5;
+    z-index: 1;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    -webkit-animation: popin 0.3s;
+    animation: popin 0.3s;
+    max-width:800px;
+    border-radius:30px;
+
+}
+#ouibounce-modal .modal-title {
+    font-size: 18px;
+    background-color: #e5e5e5;
+    color: #000;
+    padding: 10px;
+    margin: 0;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 670px;
+}
+#ouibounce-modal h3 {
+    color: #000;
+    font-size: 23px;
+    margin: 16px;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-family: MyriadProRegular;
+    max-width: 670px;
+}
+#ouibounce-modal .modal-body {
+    padding: 0px 35px;
+    font-size: 0.9em;
+}
+
+#ouibounce-modal form {
+    text-align: center;
+    margin-top: 15px;
+}
+#ouibounce-modal form input[type=text] {
+    padding: 12px;
+    max-width: 300px;
+    border: 1px solid #806f6f;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 17px;
+    height: 40px;
+    width: 100%;
+    background: #e1e1e1;
+
+}
+
+
+#ouibounce-modal form input[type=tel] {
+    padding: 12px;
+    max-width: 300px;
+    border: 1px solid #806f6f;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 17px;
+    height: 40px;
+    width: 100%;
+    background: #e1e1e1;
+
+}
+
+
+#ouibounce-modal form input[type=email] {
+    padding: 12px;
+    max-width: 300px;
+    border: 1px solid #806f6f;
+    -webkit-font-smoothing: antialiased;
+    margin-bottom: 17px;
+    height: 40px;
+    width: 100%;
+    background: #e1e1e1;
+
+}
+
+#ouibounce-modal form input[type=submit] {
+    text-transform: uppercase;
+    font-size: 28px;
+    border-radius: 0px;
+    background-color: #4ab471;
+    border: none;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    font-family: MyriadProRegular;
+    border: 2px solid #f17479;
+    height: 65px;
+    padding: 0px;
+    margin-left: 0px;
+}
+
+#ouibounce-modal .modal-footer {
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+#ouibounce-modal .modal-footer p {
+    text-transform: capitalize;
+    cursor: pointer;
+    display: inline;
+    border-bottom: 1px solid #344a5f;
+}
+@-webkit-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-ms-keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@-webkit-keyframes popin {
+    0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    85% {
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@-ms-keyframes popin {
+    0% {
+        -ms-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    85% {
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes popin {
+    0% {
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    85% {
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.colmd9 {
+    width: 60%;
+    float: left;
+    text-align: center;
+
+}
+.colmd3 {
+    width: 40%;
+    float: right;
+    text-align:center;
+    margin-top: 18px;
+}
+
+.textobm {
+    font-family: MyriadProRegular;
+    color: #424147;
+    font-size: 18px;
+    max-width: 240px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:40px;
+}
+.zagolform {
+    font-size: 30px;
+    font-family: MyriadProRegular;
+    color: #000;
+    font-weight: bold;
+
+}
+
+.formstr2 {
+    font-size: 16px;
+    font-family: MyriadProRegular;
+    font-weight: bold;
+    color: #000;
+
+}
+.managerobform {
+    font-size: 13px;
+    margin: 0 auto;
+    width: 67%;
+    font-family: MyriadProRegular;
+    color: #424147;
+
+}
+
+
+.polk {
+    font-size: 12px;
+    font-family: MyriadProRegular;
+    font-weight: bold;
+    color: #5d5d66;
+}
+.voprosik {
+    float: right;
+    font-size: 63px;
+    position: absolute;
+    right: 117px;
+    top: 167px;
+    font-family: MyriadProRegular;
+
+}
+
+@media (min-width:480px) and (max-width:768px){
+    .zagolform{
+        font-size: 27px;
+    }
+}
+
+@media (min-width:300px) and (max-width:480px){
+    .zagolform{
+        font-size: 27px;
+    }
+}
+</style>
+<!-- MEDIA-->
+<style type="text/css">
+	
+</style>
+</head>
+<body>
+<!--СЕКЦИЯ-1-->	
+<section class="section1">
+	
+	<header>
+		<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<h2 class="hh2">Интерент-магазин кранов с подогревом</h2>
+				<p class="thead">С доставкой по РФ</p>
+			</div>
+			<div class="col-md-4">
+			<br>
+			
+			<a class="knopka btn" href="#myModal" data-toggle="modal"><span class="cherta">Заказать звонок</span></a>
+		    </div>
+		</div>
+		</div>
+	</header>
+	<div class="row"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5">
+				<div class="row">
+					<div class="col-md-12">
+						<h1>Уникальный <span class="green">кран с</span> проточным <span class="green">подогревом воды</span></h1>
+						<p class="txt1">Греет до 60&#176; за 3 секунды!</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12 text-center"> 
+                        <div id="countdown_dashboard" class="">
+						
+							<div class="dash hours_dash">
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<div class="digit"><div class="top" style="display: none;">3</div><div class="bottom" style="display: block;">3</div></div>
+								<span class="dash_title">часов</span>
+							</div>
+							<div class="dots">:</div>
+							<div class="dash minutes_dash">
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<span class="dash_title">минут</span>
+							</div>
+							<div class="dots">:</div>
+							<div class="dash seconds_dash">
+								<div class="digit"><div class="top" style="display: none;">4</div><div class="bottom" style="display: block;">4</div></div>
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<span class="dash_title">секунд</span>
+							</div>
+							<div class="clear"></div>
+						</div>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<a class="knopka" href="">Заказать смеситель</a>
+					</div>
+			       </div>
+			    <div class="row">
+					<div class="col-md-12 text-center">
+						<p class="dost">ДОСТАВКА ПО ВСЕЙ РОССИИ</p>
+					</div>
+			       </div>		
+			</div>
+			<div class="col-md-7">
+				<div class="row">
+				<div class="col-md-6">
+				<figure>
+					<p><img src="img/krann.png"></p>
+					<figcaption>
+						<span class="cena">7980р.</span> <span class="green">3990руб</span>
+					</figcaption>
+				</figure>
+			       </div>
+				<div class="col-md-6">
+				<figure>
+					<p><img src="img/delim.png"></p>
+					<figcaption>
+						<span class="cena">5980р.</span> <span class="green">2990руб</span>
+					</figcaption>
+				</figure>
+			       </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- СЕКЦИЯ-2 -->
+<section class="section2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2 class="h22">Видеообзор крана с подогревом воды</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-7">
+			<div class="row">
+			<div class="col-md-12 text-center">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/19p9vPJUrW4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-md-12 text-center">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/FZ7Vv_wr2fo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
+			</div>
+			</div>
+			<div class="col-md-5">
+				<div class="row">
+					<div class="col-md-12">
+						<h3 class="h33">Применение крана</h3>
+						<ul>
+							<li>На даче или в частном доме</li>
+							<li>На уличной кухне</li>
+							<li>В квартирах, где нет гор. воды</li>
+							<li>Прекрасно заменит бойлер</li>
+							<li>На время отключения гор.воды</li>
+						</ul>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						<div class="bordo2">
+						<p class="bordo">Простая установка такого смесителя займет не более 10 минут - и теперь у вас ВСЕГДА БУДЕТ ГОРЯЧАЯ ВОДА</p></div>
+						</div>
+                    </div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h2 class="h22">Моментальный нагрев воды</h2>
+				</div>
+			</div>
+			<div class="row">
+			<div class="garant">
+				
+					<div class="col-md-6 col-md-offset-1">
+						
+					</div>
+					<div class="col-md-5 text-right">
+						<img src="img/guarantee.png">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+				<div class="sect2"><a class="knopka" href="">Заказать смеситель с подогревом воды</a>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--СЕКЦИЯ-3-->
+<section class="section3">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2 class="h22">В чем уникальность этого смесителя?</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p class="txt3"><span class="bold">Отличное сочетание цены и качества</span> - обычный смеситель приемлемого качества сейчас редко стоит менее 4000 рублей, подобный тен для нагрева - не менее 1500р.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p class="bold">Таким образом приобретая смеситель с подогревом у нас вы получаете действительно качественное изделие по очень низкой цене.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-9">
+				<img src="img/sect3.jpg">
+			</div>
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="txt3"><span class="bold">Покупатели часто спрашивают нас:</span> "что выгоднее - бойлер или кран с подогревом?"</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="bold">Давайте подсчитаем: </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="txt3"><span class="bold">Бойлер</span> стоит в несколько раз дороже и все время поддерживает температуру воды, подогревая ее.</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p class="bold">
+							Кран же расходует электричество только когда течет вода!
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<p></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="bordo3">
+					<p class="bordo">Таким образом кран выгоднее в несколько раз!</p></div>
+				    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+					<a class="knopka" href="">Заказать</a>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--СЕКЦИЯ-4 -->
+<section class="section4">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2 class="h22">
+					Нужен ли такой кран дома или на даче?
+				</h2>
+			</div>
+		</div>
+		<div class="ul-sect4">
+		<div class="row">
+			
+			<div class="col-md-6">
+				<div class="row">
+					<h3 class="h33">Без крана (холодная вода)</h3>
+				</div>
+				<div class="ul-left">
+				<div class="row">
+					<div class="col-md-5">
+						<img src="img/sect4net.jpg">
+					</div>
+					<div class="col-md-7">
+						
+						<ul>
+							<li>Грязная посуда</li>
+							<li>Ледяная вода</li>
+							<li>Не смывается жир</li>
+							<li>Невозможно принять душ или ванную</li>
+							<li>Плохо помытые овощи</li>
+						</ul>
+					</div>
+				</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<h3 class="h33">С краном с подогревом воды</h3>
+				</div>
+                <div class="row">
+					<div class="col-md-5">
+						<img src="img/sect4da.jpg">
+					</div>
+					<div class="col-md-7">
+						<ul>
+							<li>Приятно мыть посуду</li>
+							<li>Можно набрать ванную</li>
+							<li>Чисто вымытые овощи</li>
+							<li>Не надо греть воду "в тазике"</li>
+							<li>Хорошее настроение</li>
+							<li>Здоровая кожа рук</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<p>Поэтому ответ однозначен - <span class="bordo">для комфортного образа жизни горячая вода необходима</span>. К сожалению, не всегда у нас в домах есть горячая вода: где-то вообще нет (например на даче или в загородном доме), а где-то часто отключают.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="bordo4">
+				<p class="bordo">Купив кран с подогревом воды Вы навсегда решите эту проблему</p></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<a class="knopka" href="">Заказать смеситель с подогревом</a>
+				</div>
+			</div>
+	</div>
+</section>
+<!--СЕКЦИЯ-5-->
+<section class="section5">
+	<div class="container">
+		<div class="row">
+			<h2>Преимущества крана с подогревом</h2>
+		</div>
+		<div class="plus">
+		<div class="row">
+			<div class="col-md-4">
+				<figure>
+					<p><img src="img/file.png"></p>
+					<figcaption>
+					<h3 class="h35">Эффективность</h3>
+					<p class="txt5">Надежное крепление сетевого шнура</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure>
+					<p><img src="img/file-1.png"></p>
+					<figcaption>
+					<h3 class="h35">Экономия</h3>
+					<p class="txt5">На 70% экономичнее бойлеров и пр.</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure>
+					<p><img src="img/file-2.png"></p>
+					<figcaption>
+					<h3 class="h35">Дизайн</h3>
+					<p class="txt5">Современный эргономичный дизайн</p>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4 col-md-offset-2">
+				<figure>
+					<p><img src="img/file-3.png"></p>
+					<figcaption>
+					<h3 class="h35">Регулировка (для цифрового крана)</h3>
+					<p class="txt5">Цифровой индикатор температуры</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-md-4">
+				<figure>
+					<p><img src="img/file-4.png"></p>
+					<figcaption>
+					<h3 class="h35">Легкий монтаж</h3>
+					<p class="txt5">Простота в использовании и долговечность</p>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>
+<!--СЕКЦИЯ-6-->
+<section class="section6">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2 class="h66">Как заказать смеситель с подогревом</h2>
+			</div>
+		</div>
+		<div class="ico6">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-3"><img src="img/icon1.png"></div>
+					<div class="col-md-6"><p class="txt6">Оставляете заявку или звоните по телефону</p></div>
+					<div class="col-md-3">
+						<div class="str"><img src="img/str.png"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-3"><img src="img/icon2.png"></div>
+					<div class="col-md-6"><p class="txt6">Мы связываемся с Вами и подтверждаем заявку</p></div>
+					<div class="col-md-3">
+						<div class="str"><img src="img/str.png"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="row">
+					<div class="col-md-3"><img src="img/icon3.png"></div>
+					<div class="col-md-6"><p class="txt6">Получаете смеситель и наслаждаетесь его работой</p></div>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="row">
+     
+<div class="col-md-12 text-center">
+ <h2 class="h66">ДОСТАВКА И ОПЛАТА </h2>
+</div>
+</div>
+<div class="dostavka">
+<div class="row">
+
+<div class="col-md-4"><img src="img/poc1.png" class="img-responsive" /></div>
+<div class="col-md-8"><br>
+	<p class="txt6">Если нет возможности отправить Вам заказ курьером, мы отправим его ПОЧТОЙ РФ первым классом. Срок доставки от 7 до 14 дней, в зависимости от региона, стоимость по РФ 350 руб.</p></div>
+</div>
+
+
+<div class="row">
+
+<div class="col-md-4"><img src="img/usend.png" class="img-responsive" /></div>
+<div class="col-md-8"><br>
+	<p class="txt6">Доставка осуществляется до вашей двери в любом городе России курьерской компанией USEND. Срок доставки от 2 до 7 дней, в зависимости от региона, стоимость по РФ 350 руб.</p></div>
+</div>
+</div>
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<a class="knopka" href="">Заказать смеситель с подогревом воды</a>
+			</div>
+		</div>
+	</div>
+</section>
+<!--СЕКЦИЯ-7-->
+<section class="section7">
+	<div class="container">
+		<div class="row">
+			
+			<div class="col-md-5">
+				
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<h2>Заказать по акции </h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12 text-center"> 
+                        <div id="countdown_dashboard2" class="">
+						
+							<div class="dash hours_dash">
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<div class="digit"><div class="top" style="display: none;">3</div><div class="bottom" style="display: block;">3</div></div>
+								<span class="dash_title">часов</span>
+							</div>
+							<div class="dots">:</div>
+							<div class="dash minutes_dash">
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<span class="dash_title">минут</span>
+							</div>
+							<div class="dots">:</div>
+							<div class="dash seconds_dash">
+								<div class="digit"><div class="top" style="display: none;">4</div><div class="bottom" style="display: block;">4</div></div>
+								<div class="digit"><div class="top" style="display: none;">0</div><div class="bottom" style="display: block;">0</div></div>
+								<span class="dash_title">секунд</span>
+							</div>
+							<div class="clear"></div>
+						</div>
+                    </div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<form id="order3form" class="order_form" action="https://borisovden.e-autopay.com/checkout/save_order_data.php" method="post" target="_blank" onsubmit="var re = /^((8|\+7|7)[\- ]?)?(\(?\d{3}\)?[\- ]?)[\d\- ]{7,10}$/i; if(!re.test(this.phone.value.trim())) {alert('Пожалуйста проверьте правильность заполнения поля Телефон!'); return false;} else{gtag('event', 'zakaz', {'event_category':'send','event_action':'click'}); return true;}">
+										<input type="text" name="name" value="" placeholder="Введите ФИО" class="name"  placeholder='Введите ФИО';">
+										<input type="tel" name="phone" value="" placeholder="Введите номер телефона" class="phone" required="">
+											<!--<input type="email" name="email" value="" placeholder="Ваш e-mail (не обязательно)" class="email"  pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" />
+											<input style="font-size:15px;" type="text" name="address" value="" placeholder="Введите адрес (г. Курск.....)" class="address hidden"  onfocus="placeholder='';" onblur="placeholder='Введите адрес (г. Курск.....)';"/>-->
+										<input type="submit" class="btn knopka" value="Закажите смеситель">	
+											<select class="ea_select ea_pay_mode" name="pay_mode" style="display:none;"><option value="3">Наложенный платеж</option></select>
+										<input type="hidden" id="tovar_id" name="tovar_id" value="367724">
+										<input type="hidden" name="additional_field1" value="roistat_visit:2656194">
+										<input type="hidden" name="form_charset" id="form_charset" value="">
+										<input type="hidden" name="form_id" value="33600">
+										<div style="width: 100%;margin: 0 auto;text-align: center;margin-top: 3px;margin-bottom: 10px;color: #fff;font-weight: normal;font-size: 11px;">Нажимая на кнопку, вы соглашаетесь с условиями <br>
+											<a href="politics.html" target="_blank">Политики конфиденциальности</a></div>
+									
+									<input name="delay" type="hidden" value="-1"></form>
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-md-7">
+			
+			
+				<div class="row">
+				<div class="col-md-6">
+				<figure>
+					<p><img src="img/krann.png"></p>
+					<figcaption>
+						<span class="cena2">7980р.</span> <span class="red">3990руб</span>
+					</figcaption>
+				</figure>
+			       </div>
+				<div class="col-md-6">
+				<figure>
+					<p><img src="img/delim.png"></p>
+					<figcaption>
+						<span class="cena2">5980р.</span> <span class="red">2990руб</span>
+					</figcaption>
+				</figure>
+			       </div>
+				</div>
+			  </div>
+			
+		</div>
+	</div>
+</section>
+<!--СЕКЦИЯ-8-->
+<section class="section8">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h2 class="h66">Реальные отзывы наших покупателей</h2>
+			</div>
+		</div>
+		<div class="comment">
+        <div class="row">
+        <div class="col-md-4">	
+		<!-- Bootstrap 3 -->
+<div id="carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="img/im11.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im12.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im13.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im14.jpg" alt="...">
+    </div>
+  </div>
+  <!-- Элементы управления -->
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Предыдущий</span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Следующий</span>
+  </a>
+</div>
+        </div>
+        <div class="col-md-7"><p class="otz"> <span>Иван</span> Посылку получил очень быстро , Краснодарский край около 6 дней. Кран работает отлично , на самой низкой струе нагрел 64° . Раковина под него нужна глубокая , у меня брызги вылетают с неё. Есть под провод в кране и уплотнительном кольце отверстие специальное - чтоб провод в низу под мойкой в розетку вставить. Длина провода 1 метр. Магазин попросил отправить быстро и проверить - они так и сделали, просто молодцы!!! Для дачи отлично! посмотрим сколько проработает . Будут косяки напишу ещё отзыв. Магазин рекомендую, 5+ !!!!!</div>
+        </div>
+       </div>
+<div class="comment">
+        <div class="row">
+        <div class="col-md-4">	
+		<!-- Bootstrap 3 -->
+<div id="carousel2" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="img/im21.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im22.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/23.jpg" alt="...">
+    </div>
+  </div>
+  <!-- Элементы управления -->
+  <a class="left carousel-control" href="#carousel2" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Предыдущий</span>
+  </a>
+  <a class="right carousel-control" href="#carousel2" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Следующий</span>
+  </a>
+</div>
+        </div>
+        <div class="col-md-7"><p class="otz"> <span> Алексей</span>Посылка дошла быстрее заявленного срока, фирмой СДЭК. Все качественно упаковано. По внешнему виду все супер, в комплекте инструкция на русском языке))) Спасибо магазину. Установили и радуемся каждый день!</p></div>
+        </div>
+       </div>
+<div class="comment">
+        <div class="row">
+        <div class="col-md-4">	
+		<!-- Bootstrap 3 -->
+<div id="carousel3" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="img/im31.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im32.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im33.jpg" alt="...">
+    </div>
+  </div>
+  <!-- Элементы управления -->
+  <a class="left carousel-control" href="#carousel3" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Предыдущий</span>
+  </a>
+  <a class="right carousel-control" href="#carousel3" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Следующий</span>
+  </a>
+</div>
+        </div>
+        <div class="col-md-7"><p class="otz"> <span>Эдуард</span>Хороший качественный водонагреватель проточного типа. Магазину 5! Это отличное решение для тех, у кого подведена холодная вода. Умыться, почистить зубы, помыть посуду - самое то. Можно помыть и голову при определенной сноровке :) Поворотом ручки можно выбирать холодную/горячую воду и регулировать напор. Для горячей воды больше напор - меньше температура. Потребляет 3 кв/час. Электрический чайник потребляет около 2 кв/час. Если у Вас вода с большим содержанием солей, то придется чаще, чем другим очищать тэн средством от накипи.</p> </div>
+        </div>
+       </div>
+<div class="comment">
+        <div class="row">
+        <div class="col-md-4">	
+		<!-- Bootstrap 3 -->
+<div id="carousel4" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="img/im41.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im42.jpg" alt="...">
+    </div>
+    <div class="item">
+      <img src="img/im43.jpg" alt="...">
+    </div>
+    
+  </div>
+  <!-- Элементы управления -->
+  <a class="left carousel-control" href="#carousel4" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Предыдущий</span>
+  </a>
+  <a class="right carousel-control" href="#carousel4" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Следующий</span>
+  </a>
+</div>
+        </div>
+        <div class="col-md-7"><p class="otz"> <span>Алесандр</span>Пришла посылка до шушенского за 10 дней. самая быстрая моя доставка с интернет магазина. Магазин упаковал как надо,ничего не сломалось .Молодцы, рекомендую. На вид все качественно, запаха нет.В работе ещё не проверял,позже отпишусь.</p></div>
+        </div>
+       </div>
+<div class="row">
+	<div class="col-md-12 text-center">
+				<a class="knopka" href="">Заказать смеситель с подогревом воды</a>
+			</div>
+</div>
+	</div>
+</section>
+<!--FOOTER-->
+<footer class="footer">
+
+<div class="container">
+	<div class="row">
+<div class="col-md-8">
+<div class="item-text "><span class="hidden-sm hidden-xs">© САЙТ ЗАЩИЩЕН АВТОРСКИМИ ПРАВАМИ, ЛЮБОЕ КОПИРОВАНИЕ МАТЕРИАЛОВ САЙТА БЕЗ СОГЛАСОВАНИЯ С ПРАВООБЛАДАТЕЛЕМ ВЛЕЧЕТ К УГОЛОВНОЙ ОТВЕТСТВЕННОСТИ (СТ. 146 УК РФ). ЛЮБОЕ КОПИРОВАНИЕ ИНФОРМАЦИИ ЗАПРЕЩЕНО.</span>
+	<br>
+
+<img class="img-img" src="img/addr.png">
+<img class="img-img" src="img/addr2.png">
+</div>
+	<br>
+<div class="row">
+<div class="col-md-6"><div class="politic"><a href="politics.html" target="_blank">Политика конфиденциальности</a></div></div>	
+	<div class="col-md-6"><div class="support"><p>Служба поддержки: <span><a href="mailto:helpmagazina@gmail.com">helpmagazina@gmail.com</a></span></p></div></div>
+
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+						<a class="phone-f" href="tel:8-800-350-26-06">8-800-350-26-06</a>
+						<a class="phone-f" href="tel:7-499-350-26-06">7-499-350-26-06</a>
+						<a href="#myModal" class="knopka btn" data-toggle="modal">Закажите консультацию</a>
+					</div>
+
+</div>
+	</footer>
+<!-- MODALKA -->
+<div id="myModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Заголовок модального окна -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Закажите звонок</h4>
+      </div>
+      <!-- Основное содержимое модального окна -->
+      <div class="modal-body">
+        <form id="order3form" class="order_form" action="https://borisovden.e-autopay.com/checkout/save_order_data.php" method="post" target="_blank" onsubmit="var re = /^((8|\+7|7)[\- ]?)?(\(?\d{3}\)?[\- ]?)[\d\- ]{7,10}$/i; if(!re.test(this.phone.value.trim())) {alert('Пожалуйста проверьте правильность заполнения поля Телефон!'); return false;} else{gtag('event', 'zakaz', {'event_category':'send','event_action':'click'}); return true;}">
+										<input type="text" name="name" value="" placeholder="Введите ФИО" class="name" autofocus="autofocus" placeholder='Введите ФИО';">
+										<input type="tel" name="phone" value="" placeholder="Введите номер телефона" class="phone" required="">
+											<!--<input type="email" name="email" value="" placeholder="Ваш e-mail (не обязательно)" class="email"  pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" />
+											<input style="font-size:15px;" type="text" name="address" value="" placeholder="Введите адрес (г. Курск.....)" class="address hidden"  onfocus="placeholder='';" onblur="placeholder='Введите адрес (г. Курск.....)';"/>-->
+										</form>	
+      </div>
+      <!-- Футер модального окна -->
+      <div class="modal-footer">
+       <input type="submit" class="btn knopka" value="Отправить">
+      
+      </div>
+    </div>
+  </div>
+</div>
+<!-- OuiBounce Modal -->
+<div id="ouibounce-modal-A" class="ouibounce-init">
+  <div class="underlay"></div>
+  <div class="ouibounce-modal">
+    <a class="closed" title="Закрыть" href="#close" aria-hidden="true"></a>
+    <div class="ouibounce-modal-title">
+      <h3 style="font-size: 37px !important;">СТОЙТЕ! ТОЛЬКО ДЛЯ ВАС КРАН ДЕЛИМАНО СО СКИДКОЙ!</h3>
+      <h3 class="down-title">ЗАКРЫВ ЭТО ОКНО, ВЫ НАВСЕГДА ПОТЕРЯЕТЕ СКИДКУ 16 %</h3>
+    </div>
+    <div class="ouibounce-modal-body">
+      <div class="colmd9">
+        <img src="img/krann2.png"  style="max-width: 70%;"/>
+        <p class="textobm">Оплата при получении*
+          <br><br>
+          Доставка по РФ:<br>
+          - Почта от 5-14 дней<br>
+          - Курьер от 1-9 дней</p>
+      </div>
+
+      <div class="colmd3">
+        <span class="zagolform">Подумайте еще раз!</span><br>
+        <span class="formstr2">Оформляйте заказ!</span>
+
+        <form action="https://borisovden.e-autopay.com/checkout/save_order_data.php" method="post" target="_blank" id="" class="" onsubmit="var re = /^((8|\+7|7)[\- ]?)?(\(?\d{3}\)?[\- ]?)[\d\- ]{7,10}$/i; if(!re.test(this.phone.value.trim())){alert('Пожалуйста проверьте правильность заполнения поля Телефон!'); return false;}else{gtag('event', 'sendemail', { 'event_category': 'mail', 'event_action': 'send', })};return true;" class="five_crm_form">
+          <p class="managerobform">Заполните форму обратной связи – наш специалист свяжется с вами в течение 1 часа</p>
+          <input type="text" class="name hidden-xs hidden-sm" name="name" placeholder="Введите ФИО"><br />
+          <input type="tel" class="phone" id="phone" name="phone" placeholder="Введите номер телефона"  required ><br />
+          
+          <select class="ea_select ea_pay_mode" name="pay_mode" style="display:none;" ><option value="3"  >Наложенный платеж</option></select>
+          <input type="hidden" id="tovar_id" name="tovar_id" value="341130">
+          <input type="hidden" name="additional_field1" value="">
+          <input type="hidden" name="form_charset" id="form_charset" value="">
+          <input type="hidden" name="form_id" value="33600">
+          <input type="submit" name="sb" value="Купить дешевле!" style="color:#fff;">
+          <div class="polit" style="width: 70%; margin: 0 auto; text-align: center; margin-top: 3px; color:#000;font-weight: bold; font-size: 12px;">Нажимая на кнопку, вы соглашаетесь с условиями<a href="politics.html" target="_blank">Политики конфиденциальности</a></div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ouibounce-modal-B" class="ouibounce-init">
+  <div class="underlay"></div>
+  <div class="ouibounce-modal">
+    <a class="closed" title="Закрыть" href="#close" aria-hidden="true"></a>
+    <div class="ouibounce-modal-title">
+
+      <h3>СТАНЬТЕ ОБЛАДАТЕЛЕМ КРАНА ДЕЛИМАНО!</h3>
+      <h3 class="down-title" style="margin-left: 0 !important; margin-right: 0 !important;">БОЛЕЕ 10.000 КЛИЕНТОВ ПО РФ И СНГ ДОВОЛЬНЫ ПОКУПКОЙ!</h3>
+    </div>
+
+    <div class="ouibounce-modal-body">
+
+
+      <div class="colmd9">
+        <img src="img/krann2.png"  style="max-width: 70%;"/>
+        <p class="textobm">Оплата при получении*
+          <br><br>
+          Доставка по РФ:<br>
+          - Почта от 5-14 дней<br>
+          - Курьер от 1-9 дней</p>
+      </div>
+
+      <div class="colmd3">
+<span class="zagolform">Уходите <br>без консультации
+</span>
+        <span class="voprosik">?</span>
+
+
+        <form action="https://borisovden.e-autopay.com/checkout/save_order_data.php" method="post" target="_blank" id="" class="five_crm_form" onsubmit="var re = /^((8|\+7|7)[\- ]?)?(\(?\d{3}\)?[\- ]?)[\d\- ]{7,10}$/i; if(!re.test(this.phone.value.trim())){alert('Пожалуйста проверьте правильность заполнения поля Телефон!'); return false;}else{gtag('event', 'sendemail', { 'event_category': 'mail', 'event_action': 'send', })};return true;">
+          <p class="managerobform">Заполните форму обратной связи – наш специалист свяжется с вами в течение 1 часа</p>
+          <input type="text" class="name hidden-xs hidden-sm" name="name" placeholder="Введите ФИО"><br />
+          <input type="tel" class="phone" id="phone15" name="phone" placeholder="Введите номер телефона"  required ><br />
+          
+          <select class="ea_select ea_pay_mode" name="pay_mode" style="display:none;" ><option value="3"  >Наложенный платеж</option></select>
+          <input type="hidden" id="tovar_id" name="tovar_id" value="342546">
+          <input type="hidden" name="additional_field1" value="">
+          <input type="hidden" name="form_charset" id="form_charset" value="">
+          <input type="hidden" name="form_id" value="33600">
+          <input type="submit" name="sb" value="Купить сейчас!" style="color:#fff;">
+          <div style="width: 70%; margin: 0 auto; text-align: center; margin-top: 3px; color:#000;font-weight: bold; font-size: 12px;">Нажимая на кнопку, вы соглашаетесь с условиями <br class="hidden-lg hidden-md"><a href="politics.html" target="_blank">Политики конфиденциальности</a></div>
+          
+        </form>
+
+      </div>
+
+
+
+
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/masked.js"></script>
+<script> // маска к формам
+ 	jQuery(function($){
+    $(".phone").mask("9(999) 999-9999");
+    }); 
+</script>
+<script src="js/jquery.countdown.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('#countdown_dashboard').countDown({
+		targetOffset: {
+			'day':      0,
+			'month':    0,
+			'year':     0,
+			'hour':     3,
+			'min':      0,
+			'sec':      0
+		},
+		omitWeeks: true
+    });
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$('#countdown_dashboard2').countDown({
+		targetOffset: {
+			'day':      0,
+			'month':    0,
+			'year':     0,
+			'hour':     3,
+			'min':      0,
+			'sec':      0
+		},
+		omitWeeks: true
+    });
+});
+</script>
+
+
+
+
+<script>
+	!function(e,o){"function"==typeof define&&define.amd?define(o):"object"==typeof exports?module.exports=o(require,exports,module):e.ouibounce=o()}(this,function(e,o,i){return function(e,o){"use strict";function i(e,o){return void 0===e?o:e}function n(e){var o=24*e*60*60*1e3,i=new Date;return i.setTime(i.getTime()+o),"; expires="+i.toUTCString()}function t(e){e.clientY>l||(w=setTimeout(d,p))}function r(){w&&(clearTimeout(w),w=null)}function u(e){L||e.metaKey&&76===e.keyCode&&(L=!0,w=setTimeout(d,p))}function c(e,o){return a()[e]===o}function a(){for(var e=document.cookie.split("; "),o={},i=e.length-1;i>=0;i--){var n=e[i].split("=");o[n[0]]=n[1]}return o}function s(){return c(x,"true")&&!f}function d(){s()||(e&&(e.style.display="block"),y(),m())}function m(e){var o=e||{};void 0!==o.cookieExpire&&(E=n(o.cookieExpire)),!0===o.sitewide&&(T=";path=/"),void 0!==o.cookieDomain&&(b=";domain="+o.cookieDomain),void 0!==o.cookieName&&(x=o.cookieName),document.cookie=x+"=true"+E+b+T,D.removeEventListener("mouseleave",t),D.removeEventListener("mouseenter",r),D.removeEventListener("keydown",u)}var v=o||{},f=v.aggressive||!1,l=i(v.sensitivity,20),k=i(v.timer,1e3),p=i(v.delay,0),y=v.callback||function(){},E=n(v.cookieExpire)||"",b=v.cookieDomain?";domain="+v.cookieDomain:"",x=v.cookieName?v.cookieName:"viewedOuibounceModal",T=!0===v.sitewide?";path=/":"",w=null,D=document.documentElement;setTimeout(function(){s()||(D.addEventListener("mouseleave",t),D.addEventListener("mouseenter",r),D.addEventListener("keydown",u))},k);var L=!1;return{fire:d,disable:m,isDisabled:s}}});
+</script>
+
+<script>(function(){!function(e,t){"undefined"!=typeof module&&module.exports?module.exports=t():"function"==typeof define&&define.amd?define([],function(){return e.TimeMe=t()}):e.TimeMe=t()}(this,function(){var e={startStopTimes:{},idleTimeoutMs:3e4,currentIdleTimeMs:0,checkStateRateMs:250,active:!1,idle:!1,currentPageName:"default-page-name",timeElapsedCallbacks:[],userLeftCallbacks:[],userReturnCallbacks:[],trackTimeOnElement:function(t){var n=document.getElementById(t);n&&(n.addEventListener("mouseover",function(){e.startTimer(t)}),n.addEventListener("mousemove",function(){e.startTimer(t)}),n.addEventListener("mouseleave",function(){e.stopTimer(t)}),n.addEventListener("keypress",function(){e.startTimer(t)}),n.addEventListener("focus",function(){e.startTimer(t)}))},getTimeOnElementInSeconds:function(t){var n=e.getTimeOnPageInSeconds(t);return n||0},startTimer:function(t){if(t||(t=e.currentPageName),void 0===e.startStopTimes[t])e.startStopTimes[t]=[];else{var n=e.startStopTimes[t],i=n[n.length-1];if(void 0!==i&&void 0===i.stopTime)return}e.startStopTimes[t].push({startTime:new Date,stopTime:void 0}),e.active=!0},stopAllTimers:function(){for(var t=Object.keys(e.startStopTimes),n=0;n<t.length;n++)e.stopTimer(t[n])},stopTimer:function(t){t||(t=e.currentPageName);var n=e.startStopTimes[t];void 0!==n&&0!==n.length&&(void 0===n[n.length-1].stopTime&&(n[n.length-1].stopTime=new Date),e.active=!1)},getTimeOnCurrentPageInSeconds:function(){return e.getTimeOnPageInSeconds(e.currentPageName)},getTimeOnPageInSeconds:function(t){return void 0===e.getTimeOnPageInMilliseconds(t)?void 0:e.getTimeOnPageInMilliseconds(t)/1e3},getTimeOnCurrentPageInMilliseconds:function(){return e.getTimeOnPageInMilliseconds(e.currentPageName)},getTimeOnPageInMilliseconds:function(t){var n=e.startStopTimes[t];if(void 0!==n){for(var i=0,s=0;s<n.length;s++){var o=n[s].startTime,r=n[s].stopTime;void 0===r&&(r=new Date),i+=r-o}return Number(i)}},getTimeOnAllPagesInSeconds:function(){for(var t=[],n=Object.keys(e.startStopTimes),i=0;i<n.length;i++){var s=n[i],o=e.getTimeOnPageInSeconds(s);t.push({pageName:s,timeOnPage:o})}return t},setIdleDurationInSeconds:function(t){var n=parseFloat(t);if(!1!==isNaN(n))throw{name:"InvalidDurationException",message:"An invalid duration time ("+t+") was provided."};return e.idleTimeoutMs=1e3*t,this},setCurrentPageName:function(t){return e.currentPageName=t,this},resetRecordedPageTime:function(t){delete e.startStopTimes[t]},resetAllRecordedPageTimes:function(){for(var t=Object.keys(e.startStopTimes),n=0;n<t.length;n++)e.resetRecordedPageTime(t[n])},resetIdleCountdown:function(){e.idle&&e.triggerUserHasReturned(),e.idle=!1,e.currentIdleTimeMs=0},callWhenUserLeaves:function(e,t){this.userLeftCallbacks.push({callback:e,numberOfTimesToInvoke:t})},callWhenUserReturns:function(e,t){this.userReturnCallbacks.push({callback:e,numberOfTimesToInvoke:t})},triggerUserHasReturned:function(){if(!e.active)for(var t=0;t<this.userReturnCallbacks.length;t++){var n=this.userReturnCallbacks[t],i=n.numberOfTimesToInvoke;(isNaN(i)||void 0===i||i>0)&&(n.numberOfTimesToInvoke-=1,n.callback())}e.startTimer()},triggerUserHasLeftPage:function(){if(e.active)for(var t=0;t<this.userLeftCallbacks.length;t++){var n=this.userLeftCallbacks[t],i=n.numberOfTimesToInvoke;(isNaN(i)||void 0===i||i>0)&&(n.numberOfTimesToInvoke-=1,n.callback())}e.stopAllTimers()},callAfterTimeElapsedInSeconds:function(t,n){e.timeElapsedCallbacks.push({timeInSeconds:t,callback:n,pending:!0})},checkState:function(){for(var t=0;t<e.timeElapsedCallbacks.length;t++)e.timeElapsedCallbacks[t].pending&&e.getTimeOnCurrentPageInSeconds()>e.timeElapsedCallbacks[t].timeInSeconds&&(e.timeElapsedCallbacks[t].callback(),e.timeElapsedCallbacks[t].pending=!1);!1===e.idle&&e.currentIdleTimeMs>e.idleTimeoutMs?(e.idle=!0,e.triggerUserHasLeftPage()):e.currentIdleTimeMs+=e.checkStateRateMs},visibilityChangeEventName:void 0,hiddenPropName:void 0,listenForVisibilityEvents:function(){void 0!==document.hidden?(e.hiddenPropName="hidden",e.visibilityChangeEventName="visibilitychange"):void 0!==document.mozHidden?(e.hiddenPropName="mozHidden",e.visibilityChangeEventName="mozvisibilitychange"):void 0!==document.msHidden?(e.hiddenPropName="msHidden",e.visibilityChangeEventName="msvisibilitychange"):void 0!==document.webkitHidden&&(e.hiddenPropName="webkitHidden",e.visibilityChangeEventName="webkitvisibilitychange"),document.addEventListener(e.visibilityChangeEventName,function(){document[e.hiddenPropName]?e.triggerUserHasLeftPage():e.triggerUserHasReturned()},!1),window.addEventListener("blur",function(){e.triggerUserHasLeftPage()}),window.addEventListener("focus",function(){e.triggerUserHasReturned()}),document.addEventListener("mousemove",function(){e.resetIdleCountdown()}),document.addEventListener("keyup",function(){e.resetIdleCountdown()}),document.addEventListener("touchstart",function(){e.resetIdleCountdown()}),window.addEventListener("scroll",function(){e.resetIdleCountdown()}),setInterval(function(){e.checkState()},e.checkStateRateMs)},websocket:void 0,websocketHost:void 0,setUpWebsocket:function(t){if(window.WebSocket&&t){var n=t.websocketHost;try{e.websocket=new WebSocket(n),window.onbeforeunload=function(n){e.sendCurrentTime(t.appId)},e.websocket.onopen=function(){e.sendInitWsRequest(t.appId)},e.websocket.onerror=function(e){console&&console.log("Error occurred in websocket connection: "+e)},e.websocket.onmessage=function(e){console&&console.log(e.data)}}catch(e){console&&console.error("Failed to connect to websocket host.  Error:"+e)}}return this},websocketSend:function(t){e.websocket.send(JSON.stringify(t))},sendCurrentTime:function(t){var n={type:"INSERT_TIME",appId:t,timeOnPageMs:e.getTimeOnCurrentPageInMilliseconds(),pageName:e.currentPageName};e.websocketSend(n)},sendInitWsRequest:function(t){var n={type:"INIT",appId:t};e.websocketSend(n)},initialize:function(t){var n=e.idleTimeoutMs||30,i=e.currentPageName||"default-page-name",s=void 0;t&&(n=t.idleTimeoutInSeconds||n,i=t.currentPageName||i,s=t.websocketOptions),e.setIdleDurationInSeconds(n).setCurrentPageName(i).setUpWebsocket(s).listenForVisibilityEvents(),e.startTimer()}};return e})}).call(this);</script>
+<script type="text/javascript">
+    TimeMe.initialize();
+
+
+
+    function getCookie(name) {
+        var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
+        return matches ? decodeURIComponent(matches[1]) : undefined; 
+    }
+
+    function setCookie(name, value, days) {
+        var exdate = new Date();
+        exdate.setDate(exdate.getDate() + days);
+        value = escape(value) + (!days ? "" : "; expires=" + exdate.toUTCString());
+        document.cookie = name + "=" + value;
+    }
+
+    $(window).load(function() {
+        var roistat_visit = getCookie("roistat_visit") || "0";
+        Array.prototype.forEach.call(document.getElementsByName("additional_field1"), function(input) {
+            input.value = "roistat_visit:" + roistat_visit;
+        });
+    });
+
+    var sendStat = ("sendBeacon" in navigator ? navigator.sendBeacon.bind(navigator) : fetch);
+
+    sendStat("stats.php?act=put&state=0&now=" + parseInt(Date.now() / 1000) + "&source=" + getParam("utm_source") + "&medium=" + getParam("utm_medium") + "&campaign=" + getParam("utm_campaign") + "&content=" + getParam("utm_content") + "&term=" + getParam("utm_term"));
+
+    function getParam(param) {
+        var offset, params = {};
+
+        window.location.search.substring(1).split("&").forEach(function(item) {
+            offset = item.indexOf("=");
+            params[item.slice(0, offset)] = decodeURIComponent(item.slice(++offset));
+        });
+
+        return param ? (params[param] || "") : params;
+    }
+
+    function isInRange(value, min, max) {
+        return min <= value && value < max;
+    }
+
+    var COOKIE_DISABLE_POPUP_NAME = "disablePopup",
+        COOKIE_DISABLE_POPUP_DAYS = 30;
+
+    function sendTime() {
+        setCookie(COOKIE_DISABLE_POPUP_NAME, "1", COOKIE_DISABLE_POPUP_DAYS);
+        sendStat("stats.php?act=put&state=1&delay=" + TimeMe.getTimeOnCurrentPageInSeconds() + "&phone=" + encodeURIComponent(this.phone.value.trim()), {async: false});
+        return true;
+    }
+
+    function sendTimeByForm(title) {
+        setCookie(COOKIE_DISABLE_POPUP_NAME, "1", COOKIE_DISABLE_POPUP_DAYS);
+        sendStat("stats.php?act=putPopup&state=1&title=" + title, {async: false});
+        return true;
+    }
+
+    window.addEventListener("beforeunload", function() {
+        sendStat("stats.php?act=put&state=2&delay=" + TimeMe.getTimeOnCurrentPageInSeconds(), {async: false});
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll("form"), function(form) {
+        //form.addEventListener("submit", sendTime);
+
+
+        if (!form.delay) {
+            var fd = document.createElement("input");
+            fd.name = "delay";
+            fd.type = "hidden";
+            fd.value = -1;
+            form.appendChild(fd);
+        }
+
+        form.addEventListener("submit", function(event) {
+            form.delay.value = TimeMe.getTimeOnCurrentPageInSeconds();
+        });
+    });
+
+    Array.prototype.forEach.call(document.querySelectorAll(".modal"), function(modal) {
+        var form = modal.querySelector("form"),
+            title = modal.parentNode.id;
+
+        form.addEventListener("submit", sendTimeByForm.bind(form, title));
+    });
+
+    ouibounce(false, {
+        aggressive: true,
+        timer: 0,
+        callback: function() {
+            var time = TimeMe.getTimeOnCurrentPageInSeconds(), name;
+
+
+            if (isInRange(time, 0, 10)) {
+                name = "ouibounce-modal-A";
+            } else {
+                name = "ouibounce-modal-B";
+            }
+
+            if (!getCookie(COOKIE_DISABLE_POPUP_NAME) && $("#" + name).show()) {
+                sendStat("stats.php?act=putPopup&state=0&title=" + name + "&source=" + getParam("utm_source") , {async: true});
+            }
+        }
+    });
+    $('body, .ouibounce-init .closed').on('click', function() {
+        $('.ouibounce-init').hide();
+    });
+    $('.ouibounce-init .ouibounce-modal').on('click', function(e) {
+        e.stopPropagation();
+    });
+</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter47150325 = new Ya.Metrika({
+                    id:47150325,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true,
+                    trackHash:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<!-- /Yandex.Metrika counter -->
+<script language="javascript" src="//borisovden.e-autopay.com/stat.js" defer></script>
+<!-- KodPartnerki -->
+  <script language="javascript" src= "http://borisovden.e-autopay.com/hit.js"></script>
+<!-- /KodPartnerki -->
+<!-- Rating@Mail.ru counter -->
+<script type="text/javascript">
+var _tmr = window._tmr || (window._tmr = []);
+_tmr.push({id: "2950800", type: "pageView", start: (new Date()).getTime()});
+(function (d, w, id) {
+  if (d.getElementById(id)) return;
+  var ts = d.createElement("script"); ts.type = "text/javascript"; ts.async = true; ts.id = id;
+  ts.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//top-fwz1.mail.ru/js/code.js";
+  var f = function () {var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ts, s);};
+  if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
+})(document, window, "topmailru-code");
+</script><noscript><div>
+<img src="//top-fwz1.mail.ru/counter?id=2950800;js=na" style="border:0;position:absolute;left:-9999px;" alt="" />
+</div></noscript>
+<!-- //Rating@Mail.ru counter -->
+<script>
+(function(w, d, s, h, id) {
+    w.roistatProjectId = id; w.roistatHost = h;
+    var p = d.location.protocol == "https:" ? "https://" : "http://";
+    var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/"+id+"/init";
+    var js = d.createElement(s); js.async = 1; js.src = p+h+u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+})(window, document, 'script', 'cloud.roistat.com', 'ef2e8e5647cbd4561b55622ed0860ec4');
+</script>
+
+
+
+
+</body>
+</html>
